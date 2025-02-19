@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar with Footer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+    }
+    .navbar a {
+      color: rgba(199, 203, 200, 0.866);
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+    .navbar a:hover {
+      background-color: #851313;
+      border-radius: 5px;
+    }
+    .menu {
+      display: flex;
+      gap: 10px;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: rgb(221, 179, 102);
+      margin: 3px 0;
+    }
+    @media screen and (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(246, 195, 124);
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 150px;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: #333;
+      color: rgb(231, 169, 99);
+      padding: 20px;
+      margin-top: auto;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+    .footer-section h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #b71571;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+    .footer-section ul li a {
+      color: rgb(118, 17, 200);
+      text-decoration: none;
+    }
+    .footer-section ul li a:hover {
+      color: rgb(18, 187, 199);
+    }
+    .footer .social {
+      display: flex;
+      gap: 10px;
+    }
+    .footer .social a {
+      color: rgb(89, 233, 243);
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .footer .social a:hover {
+      color: rgb(138, 221, 242);
+    }
+    @media screen and (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-section {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="home.html">Numeetry Technology</a>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="menu" id="menu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main style="padding: 20px;">
+    <h1>Welcome to the Page</h1>
+    <p>This is a sample page with a responsive navbar and footer.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- About Section -->
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We are a leading company dedicated to delivering quality services and solutions.</p>
+      </div>
+      <!-- Quick Links Section -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Social Media Section -->
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social">
+          <a href="#" target="_blank">Facebook</a>
+          <a href="#" target="_blank">Twitter</a>
+          <a href="#" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menu toggle functionality
+    const toggleButton = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleButton.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
